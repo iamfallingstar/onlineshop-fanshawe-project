@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Online Store">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Online Store</title>
+</head>
+<body onload="initialize();">
+    <!--Header banner and nav-->
+    <div class="header-wrapper">
+    <header class="header">
+        <h1 class=header-banner>
+            <img src="img/iamfallingstar.png" alt= "h1 Header Banner">
+        </h1>
+        <nav>
+            <ul class= "nav-list">
+                <li class= "nav-item"><a class="nav-link" href="#js-main">STORE</a></li>
+                <li class= "nav-item"><a class="nav-link" href="#js-section-cart">CART</a></li>
+            </ul>
+        </nav>
+        </header>
+    </header>
+    </div>
+    <!--Main Page-->
+        <main id="js-main">
+            <!--time-date-->
+            <div class=time-wrapper>
+                <time id="js-time-date" class="time"></time>
+                </div>
+                <!--currency-->
+            <div class="currency-wrapper">
+            <p class="currency">Currency:
+                <select id="js-currency" class="select-currency" onchange="currencyChange();">
+                </select>
+            </p>
+            </div>
+            <!--Store Category-->
+            <section id="js-section-store" class="section-store">
+            <div class="category-wrapper">
+                <select class="category" id= "js-category-list" onchange="displayStoreItems();">
+                </select>
+            </div>
+            <!--list of items-->
+            <ul id="js-store-list" class="store-list"></ul>
+        </section>
+        <section id="js-section-cart" class="section-cart">
+            <h3><img src="img/cart.png"/></h3>
+            <p class="cart-headings">
+                <span>ID</span>
+                <span>Price</span>
+                <span>Qty</span>
+                <span>Subtotal</span>
+            </p>
+            <!--Cart list-->
+            <ul class="cart-list" id="js-cart-list"></ul>
+			<div class="totals-section">
+			    <p><span>Items Subtotal: </span><span id="js-items-subtotal"></span></p>
+				<p><span>Estimated Shipping: </span><span class="estimated-shipping" id="js-items-estimated-shipping"></span></p>
+				<p><span>Subtotal: </span><span id="js-subtotal"></span></p>
+				<p><span>Estimated Tax: </span><span class="estimated-tax" id="js-estimated-tax"></span></p>
+				<p><span>Order Total: </span><span id="js-order-total"></span></p>
+			</div>
+        </section>
+        <!--Item Details-->
+        <div class="item-details hide" id="js-item-details">
+			<div class="item-details-bg"></div>
+			<div class="item-details-close" onclick="closeItemDetails();">&#10006</div>
+			<div class="item-details-content">
+				<div class="item-details-main">
+					<div class="item-details-img" id="js-item-details-img">
+				</div>
+					<div class="item-details-main-content">
+						<p class="item-details-row">
+							<span>Name:</span>
+							<span id="js-item-details-name"></span>
+						</p>
+						<p class="item-details-row">
+							<span>ID:</span>
+							<span id="js-item-details-id"></span>
+						</p>
+						<p class="item-details-row">
+							<span>Price:</span>
+							<span id="js-item-details-price"></span>
+						</p>
+						<p class="item-details-row">
+							<span>Quantity On Hand:</span>
+							<span id="js-item-details-qty"></span>
+						</p>
+						<p class="item-details-row">
+							<span>Max Per Customer:</span>
+							<span id="js-item-details-max"></span>
+						</p>
+						<p class="item-details-row">
+							<span>Shipping Cost:</span>
+							<span id="js-item-details-ship-cost"></span>
+						</p>
+						<p class="item-details-row">
+							<span>Description:</span>
+							<textarea class="item-details-description" id="js-item-details-desc" readonly></textarea>
+						</p>
+				</div>
+				</div>
+				<p class="item-details-reviews">Reviews: </p>
+				<textarea class="item-details-reviews-text" id="js-review-text" readonly></textarea>
+				<div class="add-review">
+					<input class="add-review-input" id="js-review-input" type="text">
+					<input class="add-review-button" type="button" value="Add Review" onclick="addReview();">
+				</div>
+				<div class="review-status" id="js-review-status"></div>
+			</div>
+        </div>
+        </main>
+        <!--Footer-->
+        <footer class="page-footer">
+            <div class= "contact-us">
+                <a class="contact-link" href="mailto:iamfallingstar@gmail.com" target="blank_">CONTACT US</a>
+            </div>
+            &copy;iamfallingstar
+        </footer>
+      <script src="js/main.js"></script>
+</body>
+</html>
